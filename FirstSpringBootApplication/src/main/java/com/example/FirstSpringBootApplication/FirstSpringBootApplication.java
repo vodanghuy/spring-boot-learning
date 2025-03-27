@@ -10,9 +10,16 @@ public class FirstSpringBootApplication {
 	public static void main(String[] args) {
 		// ApplicationContext
 		ApplicationContext context = SpringApplication.run(FirstSpringBootApplication.class, args);
-		// Sử dụng Email Service mà không cần khởi tạo
-		EmailService emailService = context.getBean(EmailService.class);
-		emailService.SendMessage("Hello World"); // Email Message: Hello World
+		Boy boy = context.getBean(Boy.class);
+		System.out.println(boy);
+		Boy boy1 = context.getBean(Boy.class);
+		System.out.println(boy1);
+		/*
+		Nếu sử dụng scope singleton thì giá trị của boy là 1
+		dù cho có lấy nhiều lần giá trị.
+		Còn nếu sử dụng prototype, mỗi lần lấy giá trị thì sẽ
+		khởi tạo một giá trị mới.
+		  */
 	}
 
 }
