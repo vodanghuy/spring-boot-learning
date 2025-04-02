@@ -1,8 +1,6 @@
 package com.example.computer_components_store_website;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,5 +17,10 @@ public class ProductController {
     @GetMapping("")
     public List<Product> getProducts(){
         return productService.getAllProducts();
+    }
+    @PostMapping
+    public void addProduct(@RequestBody Product product)
+    {
+        productService.addProduct(product);
     }
 }

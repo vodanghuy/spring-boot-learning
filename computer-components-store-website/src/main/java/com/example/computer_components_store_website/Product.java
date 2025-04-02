@@ -1,6 +1,8 @@
 package com.example.computer_components_store_website;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 import java.util.Objects;
@@ -8,6 +10,8 @@ import java.util.Objects;
 @Entity
 public class Product {
     @Id
+    // Auto Increment Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
     private Double price;
