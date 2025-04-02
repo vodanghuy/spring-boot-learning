@@ -10,19 +10,14 @@ import java.util.List;
 @RequestMapping("api/product")
 public class ProductController {
 
+    private ProductService productService;
+
+    public ProductController(ProductService productService) {
+        this.productService = productService;
+    }
+
     @GetMapping("")
     public List<Product> getProducts(){
-        return List.of(
-                new Product(
-                        1,
-                        "Lenovo Thinkpad",
-                        489.99
-                ),
-                new Product(
-                        2,
-                        "Lenovo Thinkpad",
-                        489.98
-                )
-        );
+        return productService.getAllProducts();
     }
 }

@@ -1,0 +1,6 @@
+** POSTGRESQL
+psql -U [username]
+create database [datebase-name]
+
+docker compose ps
+docker exec -it [NAME] bash
